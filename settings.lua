@@ -1,0 +1,29 @@
+--data:extend{
+--    {
+--        name = 'heat-pipe-heating-radius',
+--        setting_type = 'startup',
+--        type = 'int-setting',
+--        order = 'a',
+--        default_value = 1,
+--        minimum_value = 0,
+--        maximum_value = 1024
+--    },
+--    {
+--        name = 'heating-tower-heating-radius',
+--        setting_type = 'startup',
+--        type = 'int-setting',
+--        order = 'b',
+--        default_value = 1,
+--        minimum_value = 0,
+--        maximum_value = 1024
+--    },
+--    {
+--        name = 'nuclear-reactor-heating-radius',
+--        setting_type = 'startup',
+--        type = 'int-setting',
+--        order = 'c',
+--        default_value = 1,
+--        minimum_value = 0,
+--        maximum_value = 1024
+--    }
+--}

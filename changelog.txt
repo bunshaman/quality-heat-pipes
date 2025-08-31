@@ -1,0 +1,59 @@
+---------------------------------------------------------------------------------------------------
+Version: 1.1.2
+Date: 8 / 23 / 2025
+
+  Bugfix:
+    - Fixed a crash when using Underground Heat Pipes by Quezler
+---------------------------------------------------------------------------------------------------
+Version: 1.1.1
+Date: 8 / 22 / 2025
+
+  Bugfix:
+    - Fixed a crash
+---------------------------------------------------------------------------------------------------
+Version: 1.1.0
+Date: 8 / 21 / 2025
+
+  Changes:
+    - Heating radius now scales as heating_radius * (1 + quality_level), for better mod compatability
+    - Added more event triggers to properly place quality pipes when a pipe is placed
+    - Custom heat pipes should now also be affected
+---------------------------------------------------------------------------------------------------
+Version: 1.0.5
+Date: 1 / 19 / 2025
+
+  Changes:
+    - Health of quality heat pipes is properly affected by quality now.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.4
+Date: 1 / 18 / 2025
+
+  Bugfixes:
+    - Fixed an issue with multiple heat pipes showing in the factoriopedia.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.3
+Date: 1 / 15 / 2025
+
+  Bugfixes:
+    - Fixed an issue with placing quality heat pipes.
+---------------------------------------------------------------------------------------------------
+Version: 1.0.2
+Date: 1 / 14 / 2025
+
+  Bugfixes:
+    - Fixed a line where I accidentally had "fluid-wagon" instead of "heat-pipe" (lol)
+---------------------------------------------------------------------------------------------------
+Version: 1.0.1
+Date: 1 / 12 / 2025
+
+  Bugfixes:
+    - Fixed an error with loading when heat pipes don't have a custom heating_radius.
+  Changes:
+    - Changed the requirement of base >= 2.0.29 to base >= 2.0.25
+---------------------------------------------------------------------------------------------------
+Version: 1.0.0
+Date: 1 / 12 / 2025
+
+  Features:
+    - Uploaded the mod
+    - Heat pipes are now affected by quality, with each level adding 1 to the range of the heat pipe reach.
