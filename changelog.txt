@@ -1,5 +1,11 @@
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.0
+Date: 1 / 16 / 2026
+
+  Bugfixes:
+    - When a pipe doesn't have a collision box, it will no longer crash on startup.... or have duplicates hidden in upgrade planners.
+---------------------------------------------------------------------------------------------------
+Version: 1.2.0
 Date: 1 / 15 / 2026
 
   Bugfixes:
