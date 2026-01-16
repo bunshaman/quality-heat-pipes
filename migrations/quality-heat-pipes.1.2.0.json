@@ -1,0 +1,9 @@
+{
+    "entity":
+    [
+        ["uncommon-heat-pipe",          "QHP-uncommon-heat-pipe"],
+        ["rare-heat-pipe",              "QHP-rare-heat-pipe"],
+        ["epic-heat-pipe",              "QHP-epic-heat-pipe"],
+        ["legendary-heat-pipe",         "QHP-legendary-heat-pipe"]
+    ]
+}

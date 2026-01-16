@@ -1,4 +1,11 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.0
+Date: 1 / 15 / 2026
+
+  Bugfixes:
+    - Fixed crashes when creating blueprints with quality heat pipes
+    - Upgrade planners won't display multiple heat pipes
+---------------------------------------------------------------------------------------------------
 Version: 1.1.2
 Date: 8 / 23 / 2025
 
