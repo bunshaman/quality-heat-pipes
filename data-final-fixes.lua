@@ -22,14 +22,16 @@ for _, quality_prototype in pairs(quality_names) do
 			heat_pipe.name = "QHP-"..k.."-"..heat_pipe.name
 
 			-- hacky code to prevent spam of heat pipes in upgrade planners because different collision_boxes will not show up as proper upgrades for the source in placeable_by
-			if quality_prototype.level % 4 == 0 then	
-				heat_pipe.collision_box[1][1] = heat_pipe.collision_box[1][1] - quality_prototype.level/1000
-			elseif quality_prototype.level % 4 == 1 then
-				heat_pipe.collision_box[1][2] = heat_pipe.collision_box[1][2] - quality_prototype.level/1000
-			elseif quality_prototype.level % 4 == 2 then
-				heat_pipe.collision_box[2][1] = heat_pipe.collision_box[2][1] + quality_prototype.level/1000
-			elseif quality_prototype.level % 4 == 3 then
-				heat_pipe.collision_box[2][2] = heat_pipe.collision_box[2][2] + quality_prototype.level/1000
+			if heat_pipe.collision_box ~= nil then
+				if quality_prototype.level % 4 == 0 then	
+					heat_pipe.collision_box[1][1] = heat_pipe.collision_box[1][1] - quality_prototype.level/1000
+				elseif quality_prototype.level % 4 == 1 then
+					heat_pipe.collision_box[1][2] = heat_pipe.collision_box[1][2] - quality_prototype.level/1000
+				elseif quality_prototype.level % 4 == 2 then
+					heat_pipe.collision_box[2][1] = heat_pipe.collision_box[2][1] + quality_prototype.level/1000
+				elseif quality_prototype.level % 4 == 3 then
+					heat_pipe.collision_box[2][2] = heat_pipe.collision_box[2][2] + quality_prototype.level/1000
+				end
 			end
 			heat_pipe.heating_radius = heating_radius * (1 + quality_prototype.level)
 			if data.raw.item[heat_pipe_name] then
