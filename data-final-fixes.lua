@@ -43,7 +43,7 @@ for _, quality_prototype in pairs(quality_names) do
 			heat_pipe.hidden = true
 			heat_pipe.hidden_in_factoriopedia = true
 
-			if heat_pipe.max_health then heat_pipe.max_health = heat_pipe.max_health * v end
+			--if heat_pipe.max_health then heat_pipe.max_health = heat_pipe.max_health * v end
 			if heat_pipe.next_upgrade then heat_pipe.next_upgrade = "QHP-"..k.."-"..heat_pipe.next_upgrade end
 			table.insert(heat_pipes, heat_pipe)
 		end
