@@ -40,6 +40,41 @@ local function on_built(event)
     pipe_swap(entity, surface, quality)
 end
 
+
+
+local function pipette_mimic(event)
+	if not event.selected_prototype then return end
+	if not (event.selected_prototype.derived_type == "heat-pipe") then return end
+
+	local selected_pipe = prototypes.entity[event.selected_prototype.name]
+	local normal_pipe = prototypes.entity[selected_pipe.fast_replaceable_group]
+	local quality = event.selected_prototype.quality
+    if quality == "normal" then return end
+	
+	local player = game.players[event.player_index]
+	if player.cursor_stack == nil then return end
+	local pipe = normal_pipe.items_to_place_this[1]
+	local pick_sound = "item-pick/"..pipe.name
+	
+	-- gotta find if player has the correct pipe in the inventory and then grab the index
+	local cursor = player.cursor_stack
+	local item_stack, index = player.get_main_inventory().find_item_stack({name = pipe.name, quality = quality, count = pipe.count})
+	if cursor and (cursor.valid_for_read == true) then return end
+	if item_stack then							-- If the player has pipes in their inventory somewhere
+		--game.print("pipe found in main inventory", {volume_modifier = 0})
+		-- put item from inventory into cursor
+		player.cursor_stack.swap_stack(item_stack)
+		if helpers.is_valid_sound_path(pick_sound) then player.play_sound({path = pick_sound}) end
+	else
+		-- game.print("No pipe found in main inventory", {volume_modifier = 0})
+		-- put ghost item into cursor
+		player.cursor_ghost= {name = pipe.name, quality = quality}
+		if helpers.is_valid_sound_path("utility/smart_pipette") then player.play_sound({path = "utility/smart_pipette"}) end
+	end
+end
+
+
+
 local heat_pipe_filter = {
     filter = "type",
     type = "heat-pipe"
@@ -53,3 +88,5 @@ script.on_event(defines.events.script_raised_built,             on_built, {heat_
 script.on_event(defines.events.script_raised_revive,            on_built, {heat_pipe_filter})
 script.on_event(defines.events.on_robot_built_entity,           on_built, {heat_pipe_filter})
 script.on_event(defines.events.on_entity_cloned,                on_built, {heat_pipe_filter})
+
+script.on_event("pipes-pipette-used",							pipette_mimic)

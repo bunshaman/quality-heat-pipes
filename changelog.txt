@@ -1,5 +1,11 @@
 ---------------------------------------------------------------------------------------------------
-Version: 1.2.0
+Version: 1.2.2
+Date: 1 / 16 / 2026
+
+  Changes:
+    - Using the pipette tool on a quality heat pipe now properly inserts the item into the players hand
+---------------------------------------------------------------------------------------------------
+Version: 1.2.1
 Date: 1 / 16 / 2026
 
   Bugfixes:

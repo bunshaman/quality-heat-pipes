@@ -51,3 +51,13 @@ for _, quality_prototype in pairs(quality_names) do
 end
 
 data:extend(heat_pipes)
+
+data:extend({
+    {
+        type = "custom-input",
+        name = "pipes-pipette-used",
+        key_sequence = "",
+        linked_game_control = "pipette",
+        include_selected_prototype = true
+    }
+})
