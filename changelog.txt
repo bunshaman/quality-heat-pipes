@@ -1,9 +1,17 @@
 ---------------------------------------------------------------------------------------------------
+Version: 1.2.3
+Date: 1 / 30 / 2026
+
+  Changes:
+    - Removed duplicate heat pipes from the upgrade planner for good (hopefully.)
+---------------------------------------------------------------------------------------------------
 Version: 1.2.2
-Date: 1 / 16 / 2026
+Date: 1 / 30 / 2026
 
   Changes:
     - Using the pipette tool on a quality heat pipe now properly inserts the item into the players hand
+  Bugfixes:
+    - Fixed heat pipes having their health bonuses applied twice
 ---------------------------------------------------------------------------------------------------
 Version: 1.2.1
 Date: 1 / 16 / 2026
@@ -21,13 +29,13 @@ Date: 1 / 15 / 2026
 Version: 1.1.2
 Date: 8 / 23 / 2025
 
-  Bugfix:
+  Bugfixes:
     - Fixed a crash when using Underground Heat Pipes by Quezler
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.1
 Date: 8 / 22 / 2025
 
-  Bugfix:
+  Bugfixes:
     - Fixed a crash
 ---------------------------------------------------------------------------------------------------
 Version: 1.1.0
