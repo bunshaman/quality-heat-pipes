@@ -58,19 +58,24 @@ local function pipette_mimic(event)
 	
 	-- gotta find if player has the correct pipe in the inventory and then grab the index
 	local cursor = player.cursor_stack
-	local item_stack, index = player.get_main_inventory().find_item_stack({name = pipe.name, quality = quality, count = pipe.count})
-	if cursor and (cursor.valid_for_read == true) then return end
-	if item_stack then							-- If the player has pipes in their inventory somewhere
-		--game.print("pipe found in main inventory", {volume_modifier = 0})
-		-- put item from inventory into cursor
-		player.cursor_stack.swap_stack(item_stack)
-		if helpers.is_valid_sound_path(pick_sound) then player.play_sound({path = pick_sound}) end
-	else
-		-- game.print("No pipe found in main inventory", {volume_modifier = 0})
-		-- put ghost item into cursor
-		player.cursor_ghost= {name = pipe.name, quality = quality}
-		if helpers.is_valid_sound_path("utility/smart_pipette") then player.play_sound({path = "utility/smart_pipette"}) end
-	end
+    if player.get_main_inventory() == nil then -- in map view
+        player.cursor_ghost= {name = pipe.name, quality = quality}
+        player.play_sound({path = "utility/smart_pipette"})
+    else
+        local item_stack, index = player.get_main_inventory().find_item_stack({name = pipe.name, quality = quality, count = pipe.count})
+        if cursor and (cursor.valid_for_read == true) then return end
+        if item_stack then							-- If the player has pipes in their inventory somewhere
+            --game.print("pipe found in main inventory", {volume_modifier = 0})
+            -- put item from inventory into cursor
+            player.cursor_stack.swap_stack(item_stack)
+            player.play_sound({path = pick_sound})
+        else
+            -- game.print("No pipe found in main inventory", {volume_modifier = 0})
+            -- put ghost item into cursor
+            player.cursor_ghost= {name = pipe.name, quality = quality}
+            player.play_sound({path = "utility/smart_pipette"})
+        end
+    end
 end
 
 
