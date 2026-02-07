@@ -64,14 +64,10 @@ local function pipette_mimic(event)
     else
         local item_stack, index = player.get_main_inventory().find_item_stack({name = pipe.name, quality = quality, count = pipe.count})
         if cursor and (cursor.valid_for_read == true) then return end
-        if item_stack then							-- If the player has pipes in their inventory somewhere
-            --game.print("pipe found in main inventory", {volume_modifier = 0})
-            -- put item from inventory into cursor
+        if item_stack then
             player.cursor_stack.swap_stack(item_stack)
             player.play_sound({path = pick_sound})
         else
-            -- game.print("No pipe found in main inventory", {volume_modifier = 0})
-            -- put ghost item into cursor
             player.cursor_ghost= {name = pipe.name, quality = quality}
             player.play_sound({path = "utility/smart_pipette"})
         end
