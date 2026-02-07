@@ -11,7 +11,6 @@ local function pipe_swap(pipe, surface, quality)
         position = pipe.position,
         quality = pipe.quality,
         force = pipe.force,
-        fast_replace = true,
         player = pipe.last_user,
     }
 

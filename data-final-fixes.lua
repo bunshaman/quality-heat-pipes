@@ -24,6 +24,12 @@ for _, quality_prototype in pairs(quality_names) do
 		heat_pipe.heating_radius = heating_radius * (1 + quality_prototype.level)
 		if heat_pipe.next_upgrade then heat_pipe.next_upgrade = "QHP-"..k.."-"..heat_pipe.next_upgrade end
 		table.insert(heat_pipes, heat_pipe)
+
+		--if data.raw.item[heat_pipe_name] then
+		--	heat_pipe.placeable_by = { item = heat_pipe_name, count = 1, quality = k }
+		--else
+		--	--log("No item found for heat pipe: " .. heat_pipe_name..". Proceeding without the placeable_by tag.")
+		--end
 	end
 end
 
