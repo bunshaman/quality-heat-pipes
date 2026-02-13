@@ -1,14 +1,11 @@
 
 {
-  "name": "quality-heat-pipes",
-  "version": "1.2.5",
+  "name": "artillery-blueprints",
+  "version": "0.0.1",
   "factorio_version": "2.0",
-  "title": "Quality Heat Pipes",
+  "title": "Artillery Blueprints",
   "author": "Bunshaman",
   "contact": "bunshaman on discord",
-  "dependencies": ["base >= 2.0.25",
-    "space-age",
-    "(?)farther-heat",
-    "(?)underground-heat-pipe"],
-  "description": "The reach of heat pipes is now affected by quality. +1 range per level."
+  "dependencies": ["base >= 2.0.25"],
+  "description": "Create blueprints out of artillery strikes!"
 }
