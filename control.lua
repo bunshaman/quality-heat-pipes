@@ -17,7 +17,9 @@ local function pipe_swap(pipe, surface, quality)
     local temp = pipe.temperature
     local new_pipe = surface.create_entity(info)
     new_pipe.temperature = temp
+    --new_pipe.heat_neighbours = pipe.heat_neighbours
     pipe.destroy()
+    new_pipe.update_connections()
 end
 
 
